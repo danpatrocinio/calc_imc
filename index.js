@@ -5,7 +5,8 @@ document.getElementById('calcular').onclick = function () {
 	const peso = document.getElementById('peso').value
 	const altura = document.getElementById('altura').value
 	const imc = calculaImc(peso, altura)
-	document.getElementById('resultado').innerText = 'Olá ' + nome + ', seu IMC é: ' + imc
+	document.getElementById('resultado')
+		.innerText = !peso || !altura ? '' :	'Olá ' + nome + ', seu IMC é: ' + imc
 }
 
 document.getElementById('limpar').onclick = function () {

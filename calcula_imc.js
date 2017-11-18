@@ -1,1 +1,1 @@
-export default (peso, altura) => (peso / (altura * altura)).toFixed(3)
+export default (peso, altura) => !peso || !altura ? 0 : (peso / (altura * altura)).toFixed(3)
