@@ -1,0 +1,1 @@
+export default (peso, altura) => (peso / (altura * altura)).toFixed(3)

@@ -1,10 +1,17 @@
-var calcula = require('./calcula')
-
+import calculaImc from './calcula_imc'
 
 document.getElementById('calcular').onclick = function () {
-	var nome = document.getElementById('nome').value
-	var peso = document.getElementById('peso').value
-	var altura = document.getElementById('altura').value
-	var imc = calcula(nome, peso, altura)
-	document.getElementById('resultado').innerText = 'Olá ' + nome + ', seu IMC é: ' + imc;
+	const nome = document.getElementById('nome').value || 'amigo'
+	const peso = document.getElementById('peso').value
+	const altura = document.getElementById('altura').value
+	const imc = calculaImc(peso, altura)
+	document.getElementById('resultado').innerText = 'Olá ' + nome + ', seu IMC é: ' + imc
+}
+
+document.getElementById('limpar').onclick = function () {
+	document.getElementById('nome').value = ''
+	document.getElementById('peso').value = undefined
+	document.getElementById('altura').value = undefined
+	document.getElementById('resultado').innerText = ''
+	document.getElementById('nome').focus();
 }
